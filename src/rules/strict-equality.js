@@ -11,15 +11,16 @@ module.exports = {
   create: context => ({
     BinaryExpression(node) {
       if (node.operator !== "==") return;
+
       context.report({
         node,
         message: "Use strict equality instead of loose equality.",
-        fix: fixer => fixer.replaceText(
-          node,
-          `${context.getSourceCode().getText(node.left)} === ${context
-            .getSourceCode()
-            .getText(node.right)}`
-        ),
+        fix: fixer => {
+          const leftOperand = context.getSourceCode().getText(node.left);
+          const rightOperand = context.getSourceCode().getText(node.right);
+
+          return fixer.replaceText(node, `${leftOperand} === ${rightOperand}`);
+        }
       });
     },
   }),

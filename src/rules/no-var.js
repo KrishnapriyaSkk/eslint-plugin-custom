@@ -10,6 +10,7 @@ module.exports = {
   create: context => ({
     VariableDeclaration(node) {
       if (node.kind !== 'var') return;
+
       context.report({
         node,
         message: 'Using var is not allowed.',

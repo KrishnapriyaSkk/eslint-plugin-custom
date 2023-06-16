@@ -1,5 +1,5 @@
-const noVar = require('./no-var');
-const strictEquality = require('./strict-equality');
+require('./no-var');
+require('./strict-equality');
 
 console.log("\n===================================");
 console.log("Completed all tests");
