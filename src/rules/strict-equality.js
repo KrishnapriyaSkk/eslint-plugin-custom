@@ -15,10 +15,10 @@ module.exports = {
         node,
         message: "Use strict equality instead of loose equality.",
         fix: fixer => {
-          const leftOperand = context.getSourceCode().getText(node.left);
-          const rightOperand = context.getSourceCode().getText(node.right);
+          const leftNode = context.getSourceCode().getText(node.left);
+          const rightNode = context.getSourceCode().getText(node.right);
 
-          return fixer.replaceText(node, `${leftOperand} === ${rightOperand}`);
+          return fixer.replaceText(node, `${leftNode} === ${rightNode}`);
         }
       });
     },

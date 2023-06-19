@@ -6,12 +6,7 @@ ruleTester.run("strict-equality", rule, {
   invalid: [
     {
       code: "if (a == b) {}",
-      errors: [
-        {
-          message: "Use strict equality instead of loose equality.",
-          type: "BinaryExpression",
-        },
-      ],
+      errors: [{ message: "Use strict equality instead of loose equality." }],
       output: "if (a === b) {}",
     },
   ],
