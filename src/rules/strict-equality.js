@@ -2,7 +2,7 @@ module.exports = {
   meta: {
     type: "problem",
     docs: {
-      description: "Enforce the use of strict equality over loose equality",
+      description: "Enforce the use of strict equality.",
       category: "Best Practices",
     },
     fixable: "code",

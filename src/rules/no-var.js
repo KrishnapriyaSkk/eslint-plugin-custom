@@ -2,7 +2,7 @@ module.exports = {
   meta: {
     type: "problem",
     docs: {
-      description: "Disallow the use of var",
+      description: "Disallow the use of var.",
       category: "Best Practices",
     },
   },
