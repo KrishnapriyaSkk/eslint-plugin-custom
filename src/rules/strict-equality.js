@@ -1,9 +1,9 @@
 module.exports = {
   meta: {
-    type: 'problem',
+    type: "problem",
     docs: {
-      description: 'Disallow the use of var',
-      category: 'Best Practices',
+      description: "Enforce the use of strict equality over loose equality",
+      category: "Best Practices",
     },
     fixable: "code",
   },
@@ -19,7 +19,7 @@ module.exports = {
           const rightNode = context.getSourceCode().getText(node.right);
 
           return fixer.replaceText(node, `${leftNode} === ${rightNode}`);
-        }
+        },
       });
     },
   }),

@@ -1,8 +1,13 @@
-const ruleTester = require('./testUtils');
-const rule = require('../rules/strict-equality');
+const ruleTester = require("./testUtils");
+
+const rule = require("../rules/strict-equality");
 
 ruleTester.run("strict-equality", rule, {
-  valid: [ "if (a === b) {}", "if (a === b) alert(1)",  "if (a === b) { alert(1) }" ],
+  valid: [
+    "if (a === b) {}",
+    "if (a === b) alert(1)",
+    "if (a === b) { alert(1) }",
+  ],
   invalid: [
     {
       code: "if (a == b) {}",

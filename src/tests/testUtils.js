@@ -1,8 +1,9 @@
-const { RuleTester } = require('eslint');
+const { RuleTester } = require("eslint");
 
 module.exports = new RuleTester({
   parserOptions: {
-  ecmaFeatures: { jsx: true },
-  ecmaVersion: 2020,
-  sourceType: "module",
-}});
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: 2020,
+    sourceType: "module",
+  },
+});

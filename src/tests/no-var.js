@@ -1,12 +1,13 @@
-const ruleTester = require('./testUtils');
-const rule = require('../rules/no-var');
+const ruleTester = require("./testUtils");
 
-ruleTester.run('no-var', rule, {
+const rule = require("../rules/no-var");
+
+ruleTester.run("no-var", rule, {
   valid: ["let x = 10;", "const x = 10;"],
   invalid: [
     {
       code: "var x = 10;",
-      errors: [{ message: 'Using var is not allowed.' }],
+      errors: [{ message: "Using var is not allowed." }],
     },
   ],
 });
