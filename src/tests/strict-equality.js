@@ -2,6 +2,8 @@ const ruleTester = require("./testUtils");
 
 const rule = require("../rules/strict-equality");
 
+const message = "Use strict equality instead of loose equality.";
+
 ruleTester.run("strict-equality", rule, {
   valid: [
     "if (a === b) {}",
@@ -11,8 +13,13 @@ ruleTester.run("strict-equality", rule, {
   invalid: [
     {
       code: "if (a == b) {}",
-      errors: [{ message: "Use strict equality instead of loose equality." }],
+      errors: [{ message }],
       output: "if (a === b) {}",
+    },
+    {
+      code: "if (getUserRole(user) == Roles.DEFAULT) grantAccess(user);",
+      errors: [{ message }],
+      output: "if (getUserRole(user) === Roles.DEFAULT) grantAccess(user);",
     },
   ],
 });
